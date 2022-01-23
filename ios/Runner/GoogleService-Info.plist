@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>872740922424-34timoai365dk4b29ujn6ad01nuve865.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.872740922424-34timoai365dk4b29ujn6ad01nuve865</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>872740922424-jusf1b9ocev60206i32kr6dpkg92trpc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBlE7xPkr3oGs5tS4BjfU4s7MXunP6jFpY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>872740922424</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.emailPasswordAuthApp</string>
+	<key>PROJECT_ID</key>
+	<string>emailpasswordauthapp-6aa3e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>emailpasswordauthapp-6aa3e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:872740922424:ios:7054716c26be76100832cd</string>
+</dict>
+</plist>
