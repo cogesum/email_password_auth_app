@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:email_password_auth_app/screens/home_screen.dart';
 import 'package:email_password_auth_app/screens/register_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,6 +6,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
+
+
+
 
   @override
   _LoginScreenState createState() => _LoginScreenState();

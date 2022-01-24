@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:email_password_auth_app/models/user_model.dart';
 import 'package:email_password_auth_app/screens/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,6 +12,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+    .collection("users")
+    .doc(user!.uid)
+    .get()
+    .then((value){
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {
+      });
+    });
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,20 +41,14 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           TextButton(
             child: Text("Logout", style: TextStyle(color: Colors.white)),
-            onPressed: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          LoginScreen()
-                  )
-              );
-            },
-          ),
+            onPressed: () {
+              logout(context);
+            }
+              ),
         ],
+      ),
 
         //   //trailing:TextButton(child:Text("sds"), onPressed: (){})
-      ),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -50,10 +66,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Text(
-                  "email: "
+                  "email: ${loggedInUser.email}"
               ),
               Text(
-                  "password: "
+                  "password: ${loggedInUser.password}"
               ),
             ],
           ),
@@ -61,5 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
     );
+  }
+
+  Future<void> logout(BuildContext context) async{
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }
