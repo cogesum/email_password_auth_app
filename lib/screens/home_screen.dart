@@ -16,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   UserModel loggedInUser = UserModel();
 
   @override
+
+  //func when record data about users to loggedInUser value
   void initState() {
     super.initState();
     FirebaseFirestore.instance
@@ -66,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Text(
+                //here we get email and password from Firebase
                   "email: ${loggedInUser.email}"
               ),
               Text(
@@ -79,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  //signout (logout) func
   Future<void> logout(BuildContext context) async{
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));

@@ -133,6 +133,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         child: MaterialButton(
           color: Colors.blue,
           onPressed: () {
+            //that func create a new account, and add data to firebase server
             signUp(emailEditingController.text, passwordEditingController.text);
           },
           child: Text(
@@ -192,6 +193,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
+
+  //signup func
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       await _auth
@@ -211,6 +214,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser;
 
+    //using user model for get information about user
     UserModel userModel = UserModel();
 
     // writng all the values
